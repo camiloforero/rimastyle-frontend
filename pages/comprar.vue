@@ -47,6 +47,15 @@
         placeholder="Arkan"
         validation="required"
       />
+      <FormKit
+        type="file"
+        name="fotoArtista"
+        id="fotoArtista"
+        label="Foto"
+        accept="image/*"
+        validation="required"
+        help="Asegurate de que sea una buena foto, ya que la utilizaremos en nuestro material publicitario"
+      />
     </template>
     <FormKit
       type="file"
