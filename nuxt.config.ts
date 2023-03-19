@@ -3,5 +3,7 @@ export default defineNuxtConfig({
   modules: [
 		// Your other modules
 		'./modules/vuetify',
+		'@formkit/nuxt',
+		'@nuxtjs/tailwindcss',
 	],
 })
