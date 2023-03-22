@@ -24,16 +24,16 @@
     />
     <FormKit
       type="text"
-      name="documento"
-      id="documento"
+      name="documentoIdentidad"
+      id="documentoIdentidad"
       label="Documento de identidad"
       placeholder="1010456789"
       validation="required"
     />
     <FormKit
       type="radio"
-      name="inscripcionBatalla"
-      id="inscripcionBatalla"
+      name="inscritoBatalla"
+      id="inscritoBatalla"
       label="Vas a participar en la batalla de free? (16 cupos)"
       :options="TIPOS_INSCRIPCION"
       validation="required"

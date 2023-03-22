@@ -5,5 +5,6 @@ export default defineNuxtConfig({
 		'./modules/vuetify',
 		'@formkit/nuxt',
 		'@nuxtjs/tailwindcss',
+		'@nuxtjs/supabase',
 	],
 })
