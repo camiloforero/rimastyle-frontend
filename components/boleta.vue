@@ -1,9 +1,6 @@
 <template>
   <div v-if="userData">
     <canvas ref="canvasBoleta" width="543" height="888"></canvas>
-    <h1>Hola, {{ userData.nombres }}</h1>
-    <p>Tu boleta de Rima$style está activa</p>
-    <p>Te esperamos este 31 de marzo!</p>
   </div>
 </template>
 
@@ -20,7 +17,6 @@ let response = await supabase
   .select(`*`)
   .eq('id', route.params.id)
   .single()
-console.log(response)
 const userData = ref(response.data)
 console.log(window.location.href)
 const canvasBoleta = ref(null)
@@ -28,17 +24,24 @@ const qrCodeDataUrlPromise = QRCode.toDataURL(window.location.href)
 
 
 async function dibujarBoleta() {
-  console.log(canvasBoleta)
+  console.log('onMounted')
   const ctx = canvasBoleta.value.getContext('2d')
   const boleta = new Image()
   boleta.src = '/boleta_rimastyle.png'
-  boleta.onload = () => ctx.drawImage(boleta, 0, 0)
+  await boleta.decode()
+  ctx.drawImage(boleta, 0, 0)
 
   // Dibujar el QR
   const qr = new Image()
   qr.src = await qrCodeDataUrlPromise
   console.log(qr)
   qr.onload = () => ctx.drawImage(qr, 160, 160, 235, 235)
+
+  // Dibujar el nombre
+  ctx.font = "36px sans-serif";
+  ctx.textAlign = 'center'
+  console.log(userData.value!.nombres)
+  ctx.fillText(userData.value!.nombres, 272, 450);
 }
 onMounted(dibujarBoleta)
 
