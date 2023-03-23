@@ -1,5 +1,6 @@
 <template>
   <div v-if="userData">
+    <img src="/boleta_rimastyle.png" />
     <h1>Hola, {{ userData.nombres }}</h1>
     <p>Tu boleta de Rima$style está activa</p>
     <p>Te esperamos este 31 de marzo!</p>
