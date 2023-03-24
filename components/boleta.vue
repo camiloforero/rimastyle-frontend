@@ -1,6 +1,7 @@
 <template>
   <div v-if="userData">
     <canvas ref="canvasBoleta" width="543" height="888"></canvas>
+    <v-btn @click="downloadCanvasAsImage">Descargar</v-btn>
   </div>
 </template>
 
@@ -44,6 +45,14 @@ async function dibujarBoleta() {
   ctx.fillText(userData.value!.nombres, 272, 450);
 }
 onMounted(dibujarBoleta)
+
+function downloadCanvasAsImage(){
+  const a = document.createElement("a")
+  a.href = canvasBoleta.value.toDataURL()
+  a.download = `Boleta Rima$tyle ${userData.value!.nombres}.png`
+  a.dispatchEvent(new MouseEvent("click"))
+  a.remove()
+}
 
 
 

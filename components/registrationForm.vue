@@ -4,6 +4,7 @@
     @submit="submit"
     submit-label="Enviar"
     #default="{ value }"
+    style="width: 450px"
   >
     <FormKit
       type="text"
@@ -70,8 +71,8 @@
 <script setup lang="ts">
 
 const TIPOS_INSCRIPCION = [
-  { label: "Si - 25000", value: "true" },
-  { label: "No - 20000", value: "false" },
+  { label: "Si - $25000", value: "true" },
+  { label: "No - $20000", value: "false" },
 ]
 
 const supabase = useSupabaseClient()
@@ -106,5 +107,4 @@ async function uploadFile(file: File, salt: string) {
 </script>
 
 <style scoped>
-
 </style>
