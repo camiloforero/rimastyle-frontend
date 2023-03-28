@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@nuxtjs/supabase": "^0.3.1",
+    "@types/lodash": "^4.14.192",
     "nuxt": "^3.1.0",
     "vite-plugin-vuetify": "^1.0.1",
     "vuetify": "^3.1.2"
@@ -18,6 +19,7 @@
     "@formkit/icons": "^0.16.2",
     "@formkit/nuxt": "^0.16.2",
     "@formkit/themes": "^0.17.0-e457a82",
+    "lodash": "^4.17.21",
     "qrcode": "^1.5.1"
   }
 }

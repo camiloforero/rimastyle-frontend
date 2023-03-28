@@ -4,7 +4,7 @@
     @submit="submit"
     submit-label="Enviar"
     #default="{ value }"
-    style="width: 450px"
+    style="max-width: 450px"
   >
     <FormKit
       type="text"
@@ -69,6 +69,7 @@
 </template>
 
 <script setup lang="ts">
+import deburr from "lodash/deburr"
 
 const TIPOS_INSCRIPCION = [
   { label: "Si - $25000", value: "true" },
@@ -98,7 +99,7 @@ async function submit(fields) {
 
 async function uploadFile(file: File, salt: string) {
   const [fileName, fileExt] = file.name.split('.')
-  const filePath = `${salt}-${fileName}-${Date.now()}.${fileExt}`
+  const filePath = deburr(`${salt}-${fileName}-${Date.now()}.${fileExt}`)
   let { error: uploadError } = await supabase.storage.from('inscritos-comprobantes').upload(filePath, file)
   
   if (uploadError) throw uploadError
