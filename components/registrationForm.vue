@@ -23,6 +23,14 @@
       validation="required"
     />
     <FormKit
+      type="tel"
+      name="correo_electronico"
+      id="correo_electronico"
+      label="Correo electrónico"
+      placeholder="3016178063"
+      validation="required"
+    />
+    <FormKit
       type="text"
       name="documento_identidad"
       id="documento_identidad"
