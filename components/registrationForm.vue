@@ -23,7 +23,7 @@
       validation="required"
     />
     <FormKit
-      type="tel"
+      type="email"
       name="correo_electronico"
       id="correo_electronico"
       label="Correo electrónico"
